@@ -34,6 +34,16 @@ const theme = extendTheme({
           textShadow: '2px 2px 2px #258FAA, 2px 4px 2px #44CECB',
         }
       }
+    },
+    Text:{
+      variants: {
+        'foot': {
+          color: 'gray.300',
+          _hover: {
+            color: 'blue.300'
+          }
+        }
+      }
     }
   }
 })

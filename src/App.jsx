@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Banner } from "./App/components/Banner"
-import MostPopular from "./App/components/MostPopular"
 import { Navbar } from "./App/components/Navbar"
-import { Footer } from './App/components/Footer'
+import { Footer } from './App/components/footer/Footer'
+import Home from "./App/pages/Home"
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar/>
-      <Banner />
-      <MostPopular />
-      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={''} /> //todo page not found
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
