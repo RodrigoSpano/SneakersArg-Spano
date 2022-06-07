@@ -11,12 +11,12 @@ export function Navbar() {
         <Image src={logo} boxSize='50px' alt='logo' />
         <Stack direction='row' color='gray.300' fontSize={{base: '12px', sm: '16px'}} spacing={10}>
           <NavLink to={'/'}>Home</NavLink>
-          <NavLink to={'/products-page'}>Sneakers</NavLink>
+          <NavLink to={'/sneakers'}>Sneakers</NavLink>
           <NavLink to={'contact'}>Contact</NavLink>
         </Stack>
         <Stack direction='row' color='gray.300' spacing={4}>
-          <FaUserAlt />
-          <FaShoppingCart />
+          <NavLink to={'/account'}><FaUserAlt /></NavLink>
+          <NavLink to={'/cart'}><FaShoppingCart /></NavLink>
         </Stack>
       </Stack>
     </Stack>

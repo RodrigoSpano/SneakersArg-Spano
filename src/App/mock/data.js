@@ -1,6 +1,6 @@
 import maniere from '../assets/a1rmaniere.png'
 import nb550 from '../assets/nb550.png'
-import forum from '../assets/forum.png'
+import forum from '../assets/prods/3/forum.png'
 import retro4 from '../assets/retro4.png'
 
 
