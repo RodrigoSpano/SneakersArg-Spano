@@ -7,13 +7,13 @@ import { Footer } from './App/components/Footer'
 function App() {
 
   return (
-    <BrowserRouter>
+    <>
       <Navbar/>
       <Banner />
       <MostPopular />
       
       <Footer />
-    </BrowserRouter>
+    </>
   )
 }
 
