@@ -6,4 +6,5 @@ export const requestPopular  = () => {
       resolve(baseMostPopular)
     }, 3000)
   })
+  .then((resp)=>resp.json())
 }
