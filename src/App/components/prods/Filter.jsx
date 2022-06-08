@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Filter() {
   return (
-    <Stack direction='column' maxW='250px' alignItems='center' justifyContent='space-around' minH='xs' maxH='100vh' mt={5} ml={5} borderRadius={20} boxShadow='0px 0px 22px -3px rgba(0,0,0,0.5)'>
+    <Stack direction='column' maxW='250px' alignItems='center' justifyContent='space-around'  h='xs' w='xs' mt={5} ml={5} borderRadius={20} boxShadow='0px 0px 22px -3px rgba(0,0,0,0.5)'>
 
       <Stack>
       <chakra.form>
@@ -36,8 +36,8 @@ export default function Filter() {
 
           <Box pt={5}>
             <RangeSlider defaultValue={[120, 500]} min={0} max={600} step={20} >
-              <RangeSliderTrack bg='red.100'>
-                <RangeSliderFilledTrack bg='tomato' />
+              <RangeSliderTrack bg='blue.200'>
+                <RangeSliderFilledTrack bg='blue.600' />
               </RangeSliderTrack>
               <RangeSliderThumb boxSize={2} index={0} />
               <RangeSliderThumb boxSize={2} index={1} />
