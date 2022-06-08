@@ -1,6 +1,6 @@
 import { Heading, Stack } from '@chakra-ui/react'
 import React from 'react'
-import Filter from '../components/prodsPage/Filter'
+import Filter from '../components/prods/Filter'
 
 export default function Products() {
   return (

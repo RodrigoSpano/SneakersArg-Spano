@@ -40,6 +40,7 @@ export default function MostPopular() {
               price={el.price}
               img={el.img}
               key={el.id}
+              id={el.id}
             />
           ))
         }

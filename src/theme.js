@@ -20,9 +20,40 @@ const theme = extendTheme({
         'sk' : {
           color: 'black',
           bgColor: 'blue.200',
+          fontSize:'14px',
           _hover:{
             transition: 'all ease 0.3s',
             bgColor: 'blue.400',
+          }
+        },
+        'back': {
+          color: '#000',
+          transition: 'all linear 0.3s',
+          _hover:{
+            fontSize:'15px'
+          }
+        },
+        'cart': {
+          bgColor: '#000',
+          color: '#fff',
+          borderRadius: 'none',
+          fontWeight: 'light',
+          letterSpacing: '2',
+          textTransform: 'uppercase',
+          transition: 'all linear 0.3s',
+          _hover:{
+            bgColor: 'blue.200',
+            color: '#000'
+          }
+        },
+        'inc': {
+          borderRadius: 'none',
+          size: 'xs',
+          border: '1px solid black',
+          fontSize:'24px',
+          _hover: {
+            bgColor: '#000',
+            color: '#fff'
           }
         }
       }
