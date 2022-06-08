@@ -10,7 +10,7 @@ export function Footer() {
         <SupportFooter />
         <Box textAlign='left'>
             <Heading color='gray.100' as='h2' pb={5} fontWeight='light' fontSize={{base:'20px', md:'30px'}} >Why us?</Heading>
-            <Text variant='foot'>💣Eclusive products</Text>
+            <Text variant='foot'>💣Exclusive products</Text>
             <Text variant='foot'>🌍imported products</Text>
             <Text variant='foot'>📦Shipping all over the country</Text>
             <Text variant='foot'>✔ Quality guarantee</Text>
