@@ -8,7 +8,7 @@ export default function ItemCard({img, name, price, id}) {
       <Image src={img} objectFit='contain' />
       <Box fontWeight='bold' display='flex' flexDirection='column' alignItems='center' gap={5}>
         <Text>{name}</Text>
-        <Badge fontSize='md' colorScheme='green'>U$${price}</Badge>
+        <Badge fontSize='md' colorScheme='green' borderRadius={10} fontFamily='open sans' >U$${price}</Badge>
         <Link to={`/sneakers/${id}`}>
           <Button w='100px' variant='sk'>
             See more
