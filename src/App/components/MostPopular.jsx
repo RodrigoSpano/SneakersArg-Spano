@@ -1,6 +1,6 @@
 import { Box, Heading, Spinner, Stack } from '@chakra-ui/react'
 import React, { useState, useEffect} from 'react'
-import { requestPopular } from '../mock/request'
+import { requestAll } from '../mock/request'
 import ItemCard from './ItemCard'
 
 
@@ -13,7 +13,7 @@ export default function MostPopular() {
   useEffect(() => {
 
     try{
-      requestPopular()
+      requestAll()
       .then((data) => {
         setPopular( data )
       })
@@ -35,6 +35,7 @@ export default function MostPopular() {
           load ?
           <Spinner m='auto'/>:
           popular.map(el => (
+            el.id < 5 &&
             <ItemCard 
               name={el.name}
               price={el.price}

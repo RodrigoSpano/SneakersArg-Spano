@@ -2,7 +2,7 @@ import { Spinner, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../components/productpage/ItemDetail'
-import { requestPopular } from '../mock/request'
+import { requestAll } from '../mock/request'
 
 const ProductPage = () => {
 
@@ -14,7 +14,7 @@ const ProductPage = () => {
   useEffect(()=>{
     setLoad( true )
 
-    requestPopular()
+    requestAll()
     .then((resp)=>{
       setItem( resp.find((el)=> el.id === Number(itemId)) )
     })
