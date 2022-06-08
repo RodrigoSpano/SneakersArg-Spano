@@ -1,7 +1,7 @@
-import { Button, Box, Flex, chakra } from '@chakra-ui/react'
+import { Button, Box, Flex, chakra, Text } from '@chakra-ui/react'
 import React from 'react'
 
-const ItemCounter = ({counter, setCounter, max, handleAdd, size}) => {
+const ItemCounter = ({counter, setCounter, max, handleAdd, size }) => {
   const handleIncrease = () => {
     counter < max && setCounter(counter + 1)
   }
@@ -15,11 +15,7 @@ const ItemCounter = ({counter, setCounter, max, handleAdd, size}) => {
 
   return(
     <Flex direction='column' maxW='sm' gap={5}>
-
-    <Box border='1px solid black' h='150px'>
-      <chakra.span fontFamily='open sans' borderRadius='none'>{size}US</chakra.span>
-    </Box>
-
+      <Text fontFamily='open sans' >Availables sizes: {size}</Text>
       <Box display='flex' flexDirection='row' alignItems='center' gap={2} maxW='sm'>
         <Button onClick={handleDecrease} variant='inc' >-</Button>
         <chakra.span fontSize='30px' fontFamily='Open Sans' >{counter}</chakra.span>
