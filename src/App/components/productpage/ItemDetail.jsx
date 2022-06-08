@@ -31,8 +31,8 @@ const ItemDetail = ({ item }) => {
         <Box display='flex' flexDirection='column' maxW='sm' gap={2}>
 
           <Heading as='h3' fontWeight='bold' pl={2} fontSize={{base:'20px', md: '30px', xl: '40px'}}>{item.name}</Heading>
-          <Text fontFamily='Open Sans' fontWeight='500' w='140px' pl={2} fontSize={'3xl'} borderRadius={10}>U$${item.price}</Text>
-          <Text>{item.des}</Text>
+          <Text fontFamily='Open Sans' fontWeight='500' w='140px' pl={2} fontSize={'2xl'} borderRadius={10}>U$${item.price}</Text>
+          <Text fontSize={'14px'}>{item.des}</Text>
 
         </Box>
 
