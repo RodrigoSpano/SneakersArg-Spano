@@ -4,6 +4,7 @@ import { Footer } from './App/components/footer/Footer'
 import Home from "./App/pages/Home"
 import Products from "./App/pages/Products"
 import ProductPage from "./App/pages/ProductPage"
+import SupportPage from "./App/pages/SupportPage"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sneakers" element={<Products />} />
         <Route path="/sneakers/:itemId" element={<ProductPage />} />
+        <Route path="/contact" element={<SupportPage />} />
         <Route path="*" element={''} /> //todo page not found
       </Routes>
       <Footer />
