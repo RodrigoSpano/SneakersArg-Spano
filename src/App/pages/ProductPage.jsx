@@ -34,5 +34,4 @@ const ProductPage = () => {
     </Stack>
   )
 }
-
 export default ProductPage;

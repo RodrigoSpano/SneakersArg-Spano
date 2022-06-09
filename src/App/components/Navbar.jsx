@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack, Image } from '@chakra-ui/react'
-import { FaUserAlt, FaShoppingCart } from 'react-icons/fa';
-import logo from '../assets/unnamed.png'
+import { FaUserAlt, FaShoppingBag } from 'react-icons/fa';
+import logo from '../assets/unnamed.png';
 import { NavLink } from 'react-router-dom';
 
 export function Navbar() {
@@ -14,9 +14,9 @@ export function Navbar() {
           <NavLink to={'/sneakers'}>Sneakers</NavLink>
           <NavLink to={'contact'}>Contact</NavLink>
         </Stack>
-        <Stack direction='row' color='gray.300' spacing={4}>
+        <Stack direction='row' color='white' spacing={2}>
           <NavLink to={'/account'}><FaUserAlt /></NavLink>
-          <NavLink to={'/cart'}><FaShoppingCart /></NavLink>
+          <NavLink to={'/cart'}><FaShoppingBag /></NavLink>
         </Stack>
       </Stack>
     </Stack>

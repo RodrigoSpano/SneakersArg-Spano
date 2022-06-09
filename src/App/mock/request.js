@@ -4,6 +4,6 @@ export const requestAll = () => {
   return new Promise((resolve, reject) => {
     setTimeout(()=>{
       resolve(dbProducts)
-    }, 3000)
+    }, 2000)
   })
 }
