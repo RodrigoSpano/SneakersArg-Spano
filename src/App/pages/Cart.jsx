@@ -5,9 +5,7 @@ import CartContainer from '../components/cart/CartContainer'
 export default function Cart() {
   return (
     <Stack minH='80vh' justifyContent='center' alignItems='center'>
-      <Box>
-        <Heading as='h2' fontWeight='light' textTransform='uppercase' fontSize={{base:'20px', md:'36px'}}>| Shopping Cart |</Heading>
-      </Box>
+        <Heading as='h2' fontWeight='light' letterSpacing={5} textTransform='uppercase' fontSize={{base:'20px', md:'36px'}}> Shopping Cart </Heading>
       <CartContainer />
     </Stack>
   )

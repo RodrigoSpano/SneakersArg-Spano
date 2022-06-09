@@ -6,6 +6,7 @@ import Products from "./App/pages/Products"
 import ProductPage from "./App/pages/ProductPage"
 import SupportPage from "./App/pages/SupportPage"
 import Cart from "./App/pages/Cart"
+import Account from "./App/pages/Account"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/sneakers/:itemId" element={<ProductPage />} />
         <Route path="/contact" element={<SupportPage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/account" element={<Account />} />
         <Route path="*" element={''} /> //todo page not found
       </Routes>
       <Footer />
