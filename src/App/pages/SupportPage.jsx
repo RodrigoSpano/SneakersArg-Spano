@@ -32,7 +32,7 @@ export default function SupportPage() {
   const isError = Input === ''
 
   return (
-    <Stack minH='80vh' maxH='100vh' w='100vw' justifyContent='center' alignItems='center' >
+    <Stack minH='80vh' maxH='100vh' w='100vw' justifyContent='center' alignItems='center' p={5} >
         <Button onClick={handleBack} alignSelf='flex-start' ml={5} mt={10} variant='back' w='50px' fontSize='12px' textTransform='uppercase'>⬅ back</Button>
 
 
