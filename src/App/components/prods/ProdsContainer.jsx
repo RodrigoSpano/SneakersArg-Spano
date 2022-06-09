@@ -24,7 +24,7 @@ export default function ProdsContainer() {
   
 
   return (
-    <Stack minH='100vh' w='container.xl' direction='row' flexWrap='wrap' justifyContent='center' p={10} >
+    <Stack minH='100vh' w='container.xl' direction='row' flexWrap='wrap' justifyContent='center' p={10} userSelect='none' >
       {
         load
         ? <Spinner size='xl'/>

@@ -5,7 +5,7 @@ import Payment from './Payment'
 
 export function Footer() {
   return (
-    <Stack bgColor='gray.900' w='100vw' minH='300px'>
+    <Stack bgColor='gray.900' w='100vw' minH='300px' userSelect='none' >
       <Stack direction={{base:'column', sm: 'row'}} justifyContent='center' alignItems={{base: 'center', sm: 'center', md:'normal'}} mt={5} gap={10} flexWrap={{base: 'nowrap', sm: 'wrap', md:'wrap'}}>
         <SupportFooter />
         <Box textAlign='left'>
@@ -18,7 +18,7 @@ export function Footer() {
         <Payment />
         <Box>
           <Heading as='h2' fontSize={{base:'20px',md: '30px'}} color='gray.100' fontWeight='light' pb={5}>Weekly NewsLetter</Heading>
-          <Button variant='sk'>Suscribe</Button>
+          <Button variant='sk' >Suscribe</Button>
         </Box>
       </Stack>
         <Text color='white' pl={5} pt={20} fontSize='xs'>Copyright ©SneakersArg 2022</Text>

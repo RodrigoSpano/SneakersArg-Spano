@@ -27,7 +27,7 @@ export default function MostPopular() {
   }, [])
 
   return (
-    <Stack h='100vh' bg='gray.100' pt={10}>
+    <Stack h='100vh' bg='gray.100' pt={10} userSelect='none'>
       <Heading textAlign='center' letterSpacing={1} fontWeight='light'>Most Popular Products</Heading>
       <Box w='100vw' h='md' m={5} display='flex' justifyContent='center' alignItems='center' flexWrap='wrap'>
         
