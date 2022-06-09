@@ -10,18 +10,23 @@
 
 ####Instalación:
 **Vite Js:**
+
 `$ npm create vite@latest `
 
 **Chakra UI:**
 *npm*
+
 `$ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6`
 *yarn*
+
 `$ yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6`
 
 **React-icons:**
+
 `$ npm i react-icons`
 
 **React-Router-Dom:**
+
 `$ npm i react-router-dom`
 
 ####Tipografias usadas:
