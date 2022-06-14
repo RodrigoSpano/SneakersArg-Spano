@@ -8,6 +8,7 @@ import SupportPage from "./App/pages/SupportPage"
 import Cart from "./App/pages/Cart"
 import Account from "./App/pages/Account"
 import { CartProvider } from "./App/context/CartContext"
+import PageNotFound from "./App/pages/PageNotFound"
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
           <Route path="/contact" element={<SupportPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/account" element={<Account />} />
-          <Route path="*" element={''} /> //todo page not found
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
