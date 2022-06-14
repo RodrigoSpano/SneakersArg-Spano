@@ -6,7 +6,7 @@ import sn5 from '../assets/prods/1/barelygreen.png'
 import sn6 from '../assets/prods/2/purple.png'
 import sn7 from '../assets/prods/4/se-indigo.png'
 import sn8 from '../assets/prods/5/green2.png'
-import sn9 from '../assets/prods/6/blazer3.png'
+import sn9 from '../assets/prods/6/travis-fragmento.png'
 import sn10 from '../assets/prods/7/apricot-orange.png'
 import sn11 from '../assets/prods/canyon-rust.png'
 import sn12 from '../assets/prods/yeezy-inertia.png'
@@ -86,8 +86,8 @@ const dbProducts = [
     id: 8,
   },
   {
-    name:'Nike Blazer 77 Low',
-    price: 100,
+    name:'Air Jordan 1 Low Travis Scott Fragment',
+    price: 200,
     img: sn9,
     des: 'Low-top grained leather sneakers in white. Textile logo patch and raw edge at padded canvas tongue. Logo printed at heel counter. Buffed leather Swoosh appliqué at sides.',
     size: '10.5 US',
@@ -117,7 +117,7 @@ const dbProducts = [
     price: 544,
     img:sn12,
     des:'The adidas Yeezy Boost 700 ‘Inertia’ is part of the Yeezy Season 8 lineup that launched March 2019. The ‘Inertia’ colorway showcases the original 700 upper, with a heavily paneled construction made with premium suede, mesh and smooth leather sections. Cast primarily in cool grey tones, the sneaker includes hits of Tangerine for contrast. The shoe’s signature chunky midsole is equipped with full-length Boost cushioning for responsive comfort.',
-    size: 11,
+    size: '11 US',
     stock: 33,
     id:12
   }

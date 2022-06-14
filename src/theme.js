@@ -46,6 +46,21 @@ const theme = extendTheme({
             color: '#000'
           }
         },
+        'restore': {
+          bgColor: '#fff',
+          color: '#000',
+          borderRadius: 'none',
+          border: '1px solid black',
+          fontWeight: 'light',
+          letterSpacing: '2',
+          textTransform: 'uppercase',
+          transition: 'all linear 0.3s',
+          _hover:{
+            bgColor: 'blue.200',
+            color: '#fff',
+            border:'1px solid white'
+          }
+        },
         'inc': {
           borderRadius: 'none',
           size: 'xs',

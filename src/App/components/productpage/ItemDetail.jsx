@@ -1,10 +1,14 @@
 import { Box, Button, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ItemCounter from "./ItemCounter";
+import { useCartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ item }) => {
-  const [count, setCount] = useState(1)
+  
+  const [quantity, setQuantity] = useState(1)
+
+  const {addItem, isInCart} = useCartContext()
 
   const navigate = useNavigate()
   const handleBack = () => {
@@ -14,9 +18,10 @@ const ItemDetail = ({ item }) => {
   const handleAdd = () => {
     const itemToCart = {
       ...item,
-      count
+      quantity
     }
     console.log(itemToCart)
+    addItem(itemToCart)
   }
 
   return(
@@ -36,13 +41,28 @@ const ItemDetail = ({ item }) => {
 
         </Box>
 
-        <ItemCounter 
-        counter={count}
-        setCounter={setCount}
-        max={item.stock}
-        handleAdd={handleAdd}
-        size={item.size}
-        />
+        {
+          isInCart(item.id)
+          ? <>
+            <Text fontWeight='bold' textTransform='uppercase'>
+              this item is in cart
+            </Text>
+            <Link to={'/cart'}>
+              <Button variant='cart'>
+                go to cart
+              </Button>
+            </Link>
+            </>
+            : <ItemCounter 
+              counter={quantity}
+              setCounter={setQuantity}
+              max={item.stock}
+              handleAdd={handleAdd}
+              size={item.size}
+              stock={item.stock}
+              />
+        }
+
 
       </Stack>
     </Stack>

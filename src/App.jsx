@@ -7,23 +7,26 @@ import ProductPage from "./App/pages/ProductPage"
 import SupportPage from "./App/pages/SupportPage"
 import Cart from "./App/pages/Cart"
 import Account from "./App/pages/Account"
+import { CartProvider } from "./App/context/CartContext"
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sneakers" element={<Products />} />
-        <Route path="/sneakers/:itemId" element={<ProductPage />} />
-        <Route path="/contact" element={<SupportPage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="*" element={''} /> //todo page not found
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sneakers" element={<Products />} />
+          <Route path="/sneakers/:itemId" element={<ProductPage />} />
+          <Route path="/contact" element={<SupportPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="*" element={''} /> //todo page not found
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

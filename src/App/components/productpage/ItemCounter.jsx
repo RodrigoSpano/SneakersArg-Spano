@@ -1,7 +1,7 @@
 import { Button, Box, Flex, chakra, Text } from '@chakra-ui/react'
 import React from 'react'
 
-const ItemCounter = ({counter, setCounter, max, handleAdd, size }) => {
+const ItemCounter = ({counter, setCounter, max, handleAdd, size, stock }) => {
   const handleIncrease = () => {
     counter < max && setCounter(counter + 1)
   }
@@ -12,9 +12,9 @@ const ItemCounter = ({counter, setCounter, max, handleAdd, size }) => {
 
 
 
-
   return(
     <Flex direction='column' maxW='sm' gap={5}>
+      <Text fontFamily='open sans' > Available Stock: {stock} unit..</Text>
       <Text fontFamily='open sans' >Availables sizes: {size}</Text>
       <Box display='flex' flexDirection='row' alignItems='center' gap={2} maxW='sm'>
         <Button onClick={handleDecrease} variant='inc' >-</Button>
