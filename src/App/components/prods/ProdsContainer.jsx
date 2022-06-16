@@ -1,7 +1,9 @@
 import { Spinner, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { requestAll } from '../../mock/request'
+// import { requestAll } from '../../mock/request'
 import ItemCard from '../ItemCard'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
 export default function ProdsContainer() {
 
@@ -12,14 +14,25 @@ export default function ProdsContainer() {
   useEffect(() => {
     setLoad( true )
 
-    requestAll()
-    .then((data)=>{
-      setProds( data )
+
+    const productsRef = collection(db, 'products')
+    // const q = query(productsRef, where('price',"<=", 250)) //con un limit(2) declaro el limite de resultados
+
+    getDocs(productsRef)
+    .then((resp) => {
+      // setProds( resp.docs.map( (el) => el.data() ) )
+      // const newItems = resp.docs.map( (el) => el.data() )
+      const newItems = resp.docs.map( (el) => {
+        return {
+          id: el.id,
+          ...el.data()
+        }
+      })
+      setProds( newItems)
     })
-    .catch((err)=> console.log('Error', err))
-    .finally(()=>{
-      setLoad( false )
-    })
+    .finally(() =>  setLoad( false ))
+
+
   }, [])
   
 

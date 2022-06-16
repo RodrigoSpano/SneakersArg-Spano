@@ -2,7 +2,11 @@ import { Spinner, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../components/productpage/ItemDetail'
-import { requestAll } from '../mock/request'
+// import { requestAll } from '../mock/request'
+import { doc, getDoc, query, where} from 'firebase/firestore'
+import { db } from '../firebase/config'
+
+
 
 const ProductPage = () => {
 
@@ -14,14 +18,14 @@ const ProductPage = () => {
   useEffect(()=>{
     setLoad( true )
 
-    requestAll()
-    .then((resp)=>{
-      setItem( resp.find((el)=> el.id === Number(itemId)) )
+    const docRef = doc(db, 'products', itemId)
+    getDoc(docRef)
+    .then((resp) => {
+      setItem({ id:resp.id, ...resp.data() })
     })
-    .catch(err=> console.log('error', err))
-    .finally(()=>{
-      setLoad( false )
-    })
+    .finally(()=> setLoad(false))
+
+
   }, [])
 
   return (
