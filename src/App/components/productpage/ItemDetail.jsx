@@ -37,7 +37,7 @@ const ItemDetail = ({ item }) => {
 
           <Heading as='h3' fontWeight='bold' pl={2} fontSize={{base:'20px', md: '30px', xl: '40px'}}>{item.name}</Heading>
           <Text fontFamily='Open Sans' fontWeight='500' w='140px' pl={2} fontSize={'2xl'} borderRadius={10}>U$${item.price}</Text>
-          <Text fontSize={'14px'}>{item.des}</Text>
+          <Text fontSize={'14px'}>{item.desc}</Text>
 
         </Box>
 

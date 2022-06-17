@@ -1,8 +1,8 @@
 import { Box, Heading, Spinner, Stack } from '@chakra-ui/react'
 import React, { useState, useEffect} from 'react'
-import { requestAll } from '../mock/request'
 import ItemCard from './ItemCard'
-
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../firebase/config'
 
 
 export default function MostPopular() {
@@ -11,19 +11,25 @@ export default function MostPopular() {
   const [load, setLoad] = useState( true )
 
   useEffect(() => {
+    setLoad( true )
 
-    try{
-      requestAll()
-      .then((data) => {
-        setPopular( data )
+    const mostPopular = collection(db, 'products')
+    const q = query(mostPopular, where('popular','==', true) )
+
+    getDocs(q)
+    .then((resp) => {
+      const newPopular = resp.docs.map( (el) => {
+        return {
+          id: el.id,
+          ...el.data()
+        }
       })
-      .catch((err) => console.log(err))
-      .finally(()=>{
-        setLoad( false )
-      })
-    } catch(err) {
-      console.log(err)
-    }
+      setPopular( newPopular )
+    })
+    .finally(()=> setLoad(false))
+    
+
+
   }, [])
 
   return (
@@ -35,7 +41,6 @@ export default function MostPopular() {
           load ?
           <Spinner m='auto'/>:
           popular.map(el => (
-            el.id < 5 &&
             <ItemCard 
               name={el.name}
               price={el.price}
