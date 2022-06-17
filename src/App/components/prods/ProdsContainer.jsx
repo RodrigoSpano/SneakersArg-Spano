@@ -2,13 +2,16 @@ import { Spinner, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 // import { requestAll } from '../../mock/request'
 import ItemCard from '../ItemCard'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../../firebase/config'
+import { useParams } from 'react-router-dom'
 
 export default function ProdsContainer() {
 
   const [prods, setProds] = useState(null)
   const [load, setLoad] = useState(true)
+
+  const { brand, price } = useParams()
 
 
   useEffect(() => {
@@ -16,24 +19,24 @@ export default function ProdsContainer() {
 
 
     const productsRef = collection(db, 'products')
-    // const q = query(productsRef, where('price',"<=", 250)) //con un limit(2) declaro el limite de resultados
+    const q1 = brand ? query(productsRef, where('brand', '==', brand)) : productsRef 
+    const q2 = price ? query(productsRef, where('price', '<=', Number(price))) : productsRef
 
-    getDocs(productsRef)
+    getDocs(q1)
     .then((resp) => {
-      // setProds( resp.docs.map( (el) => el.data() ) )
-      // const newItems = resp.docs.map( (el) => el.data() )
+      
       const newItems = resp.docs.map( (el) => {
         return {
           id: el.id,
           ...el.data()
         }
       })
-      setProds( newItems)
+      setProds( newItems )
     })
     .finally(() =>  setLoad( false ))
 
 
-  }, [])
+  }, [brand])
   
 
   return (
