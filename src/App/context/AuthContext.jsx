@@ -16,7 +16,7 @@ export const useAuthContext = () => {
 export const AuthProvider = ({children}) => {
 
   const [auth, setAuth] = useState({
-    loggedIn: false,
+    loggedIn: true,
     userId: null,
   })
 
