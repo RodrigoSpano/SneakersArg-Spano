@@ -14,8 +14,8 @@ export default function MostPopular() {
   useEffect(() => {
     setLoad( true )
 
-    const mostPopular = collection(db, 'products')
-    const q = query(mostPopular, where('popular','==', true) )
+    const products = collection(db, 'products')
+    const q = query(products, where('popular','==', true) )
 
     getDocs(q)
     .then((resp) => {
