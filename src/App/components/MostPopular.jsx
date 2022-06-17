@@ -5,6 +5,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../firebase/config'
 
 
+
 export default function MostPopular() {
 
   const [popular, setPopular] = useState([])
@@ -14,7 +15,7 @@ export default function MostPopular() {
     setLoad( true )
 
     const mostPopular = collection(db, 'products')
-    const q = query(mostPopular, where('popular','===', true) )
+    const q = query(mostPopular, where('popular','==', true) )
 
     getDocs(q)
     .then((resp) => {

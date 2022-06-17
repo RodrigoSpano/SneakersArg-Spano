@@ -1,12 +1,12 @@
 import { Box, Button, Heading, Input } from '@chakra-ui/react';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import hero from '../assets/hero.png';
 
 export function Banner() {
 
-  const Navigate = useNavigate()
+  const navigate = useNavigate()
   const handleProducts = () => {
-    Navigate('/sneakers')
+    navigate('/sneakers')
   }
 
   return (
