@@ -20,7 +20,6 @@ export default function ProdsContainer() {
 
     const productsRef = collection(db, 'products')
     const q1 = brand ? query(productsRef, where('brand', '==', brand)) : productsRef 
-    const q2 = price ? query(productsRef, where('price', '<=', Number(price))) : productsRef
 
     getDocs(q1)
     .then((resp) => {
@@ -37,6 +36,25 @@ export default function ProdsContainer() {
 
 
   }, [brand])
+
+  useEffect(()=> {
+    const productsRef = collection(db, 'products')
+    const q2 = price ? query(productsRef, where('price', '<=', Number(price))) : productsRef
+
+    getDocs(q2)
+    .then((resp) => {
+      const newItems = resp.docs.map( (el) => {
+        return {
+          id: el.id,
+          ...el.data()
+        }
+      } )
+      setProds( newItems )
+    })
+    .finally(()=> setLoad( false ))
+
+  }, [price])
+
   
 
   return (
