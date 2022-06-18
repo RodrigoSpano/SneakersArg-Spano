@@ -23,7 +23,7 @@ export default function CartContainer() {
                 <Heading as='h3' fontSize={{base:'12px', md: '18px'}}>{item.name}</Heading>
                 <Text fontFamily='open sans' fontSize='12px' fontWeight='bold'>Quantity: {item.quantity} | Size: {item.size}</Text>
                 <Badge colorScheme='green' borderRadius={10} fontSize={{lg:'14px'}} maxW='max-content' fontFamily='open sans'>price $${item.price}</Badge>
-                <Button onClick={() => removeItem(item.id)} w='min-content' bgColor='white' transition='all ease 0.5s' _hover={{ bgColor:'blue.200'}}
+                <Button onClick={() => removeItem(item.id)} w='min-content' bgColor='white' transition='all ease 0.5s' _hover={{ color:'red.400'}}
                 >
                   <FaTrashAlt />
                 </Button>

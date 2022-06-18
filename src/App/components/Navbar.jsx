@@ -1,24 +1,24 @@
 import React from 'react';
-import { Stack, Image } from '@chakra-ui/react'
-import { FaUserAlt, FaShoppingBag } from 'react-icons/fa';
-import logo from '../assets/unnamed.png';
-import { NavLink } from 'react-router-dom';
+import { Box, Heading, Image, Stack } from '@chakra-ui/react'
+import { DrawerNav } from './Nav/Drawer';
+import { NavLink, useNavigate } from 'react-router-dom';
+import title from '../assets/title.png'
+import unnamed from '../assets/unnamed.png'
 
 export function Navbar() {
+
+  const navigate = useNavigate()
+  const handleHome = () => {
+    navigate('/')
+  }
+
   return (
-    <Stack zIndex={1} overflowX='hidden' direction='row' height='44px' w='100vw' justifyContent='center' alignItems='center' pr={4} pl={4} bg='blue.400' position='fixed'>
-      <Stack direction='row' alignItems='center' spacing={4}>
-        <Image src={logo} boxSize='50px' alt='logo' />
-        <Stack direction='row' color='gray.300' fontSize={{base: '12px', sm: '16px'}} spacing={10}>
-          <NavLink to={'/'}>Home</NavLink>
-          <NavLink to={'/sneakers'}>Sneakers</NavLink>
-          <NavLink to={'contact'}>Contact</NavLink>
-        </Stack>
-        <Stack direction='row' color='white' spacing={2}>
-          <NavLink to={'/account'}><FaUserAlt /></NavLink>
-          <NavLink to={'/cart'}><FaShoppingBag /></NavLink>
-        </Stack>
-      </Stack>
+    <Stack userSelect='none' zIndex={1} overflowX='hidden' direction='row' height='50px' w='100vw' alignItems='center' justifyContent='space-between' position='fixed' bg='blue.400' pr={10} >
+        <DrawerNav />
+        <Box display='flex' flexDirection='row' alignItems='center' overflowY={'hidden'} _hover={{transition:'all ease 0.8s',transform: 'rotate(180deg)', h:'25px'}}>
+          <Image src={unnamed} h='30px' />
+          <Image src={title} h='30px' pt={1} onClick={handleHome} cursor='pointer'   />
+        </Box>
     </Stack>
   )
 }

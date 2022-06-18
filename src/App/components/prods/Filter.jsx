@@ -10,12 +10,10 @@ export default function Filter() {
 
 
   return (
-    <Stack userSelect='none' direction='column' maxW='250px' alignItems='center' justifyContent='space-around'  h='min-content' w='xs' mt={5} ml={5} borderRadius={20} boxShadow='0px 0px 22px -3px rgba(0,0,0,0.5)' p={5}>
+    <Stack userSelect='none' direction='column' maxW='250px' alignItems='center' justifyContent='space-around'  h='min-content' w='xs' mt={5} ml={5} p={5}>
 
       <Stack p={5} gap={5}>
-        <form >
-          <Input isInvalid={isError} name='prod' size='xs' variant='filled' maxW='md' placeholder='search..' borderRadius={10} _placeholder={{color:'black', fontWeight: 'bold'}}/>
-        </form>
+
 
         <Flex direction='column' gap={2} borderBottom='1px solid gray' pb={5}>
           <Heading as='h3' fontSize='14px' letterSpacing={2} textTransform='capitalize' fontWeight='bold' >brands</Heading>

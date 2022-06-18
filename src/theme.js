@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { BiBluetooth } from "react-icons/bi";
 import './index.css'
 const theme = extendTheme({
   fonts: {
@@ -8,6 +9,16 @@ const theme = extendTheme({
   components: {
     Button: {
       variants: {
+        'na':{
+          bgColor: 'none',
+          fontSize: '3xl',
+          color: 'yellow.400',
+          transition: 'all ease 0.5s',
+          _hover: {
+            transform: 'rotate(-90deg)',
+            color:'black'
+          }
+        },
         'nik': {
           color: 'white',
           border: '1px solid white',
@@ -87,6 +98,15 @@ const theme = extendTheme({
           color: 'gray.300',
           _hover: {
             color: 'blue.300'
+          }
+        },
+        'nav':{
+          fontSize: 'xl',
+          transition: 'all linear 0.1s',
+          fontWeight: 'bold',
+          _hover:{
+            color: 'blue.300',
+            fontSize:'2xl'
           }
         }
       }
