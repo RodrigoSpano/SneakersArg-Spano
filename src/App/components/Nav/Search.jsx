@@ -55,7 +55,7 @@ export const Search = () => {
             && <Box borderBottom='1px solid gray' h='auto'>
                 {
                   prods.filter( (el) =>  el.name.toLowerCase().includes(value)   ).map( (res) => (
-                    <Link to={`/sneakers/${res.id}`}>
+                    <Link to={`/sneakers/${res.id}`} key={res.id} >
                       <Text _hover={{bgColor: 'gray.100', cursor: 'pointer'}}>
                         {res.name}
                       </Text>
