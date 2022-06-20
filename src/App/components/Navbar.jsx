@@ -15,7 +15,7 @@ export function Navbar() {
   return (
     <Stack userSelect='none' zIndex={1} overflowX='hidden' direction='row' height='50px' w='100vw' alignItems='center' justifyContent='space-between' position='fixed' bg='blue.400' pr={10} >
         <DrawerNav />
-        <Box display='flex' flexDirection='row' alignItems='center' overflowY={'hidden'} _hover={{transition:'all ease 0.8s',transform: 'rotate(180deg)', h:'25px'}}>
+        <Box display='flex' flexDirection='row' alignItems='center' overflowY={'hidden'}>
           <Image src={unnamed} h='30px' />
           <Image src={title} h='30px' pt={1} onClick={handleHome} cursor='pointer'   />
         </Box>
