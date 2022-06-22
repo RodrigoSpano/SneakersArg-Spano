@@ -20,7 +20,6 @@ const ItemDetail = ({ item }) => {
       ...item,
       quantity
     }
-    console.log(itemToCart)
     addItem(itemToCart)
   }
 

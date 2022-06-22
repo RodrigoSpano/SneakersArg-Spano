@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function PriceBox({total, restore}) {
 
@@ -17,9 +18,11 @@ export default function PriceBox({total, restore}) {
               </Box>
             <Text textAlign='end' fontWeight='bold'>U$$ {total + 5}</Text>
             <Flex direction={{base:'column', lg: 'row'}} gap={4} pt={5}>
-              <Button variant='cart' w={{lg:'200px'}}>
+              <Link to='/cart/checkout'>
+                <Button variant='cart' w={{lg:'200px'}}>
                 Checkout
               </Button>
+              </Link>
               <Button onClick={restore} variant='restore'>Restore</Button>
             </Flex>
     </Flex>

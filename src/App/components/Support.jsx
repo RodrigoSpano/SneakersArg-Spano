@@ -19,7 +19,6 @@ export default function Support() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(value)
   }
 
   return (
