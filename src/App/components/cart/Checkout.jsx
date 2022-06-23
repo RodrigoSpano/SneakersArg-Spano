@@ -1,10 +1,9 @@
-import { Button, Heading, Input, Stack, chakra } from '@chakra-ui/react';
+import { Button, Heading, Input, Stack, chakra, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
-import { collection, addDoc, doc, updateDoc, getDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
+import { collection, addDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/config';
-import { SiMetrodemadrid } from 'react-icons/si';
 
 const Checkout = () => {
 
@@ -59,7 +58,6 @@ const Checkout = () => {
       alert('insufficient stock')
     }
 
-
   }
 
   const handleInput = (e) => {
@@ -67,6 +65,20 @@ const Checkout = () => {
       ...values,
       [e.target.name]:e.target.value
     })
+  }
+
+  if(orderId) {
+    return(
+      <Stack h='70vh' alignItems='center' justifyContent='center'>
+          <Stack borderRadius={20} p={10} boxShadow='0px 0px 22px -3px rgba(0,0,0,0.3)'>
+            <Heading>Thanks for trust us!</Heading>
+            <Text>this is yout order ID : <strong>{orderId}</strong></Text>
+            <Link to={'/'}>
+              <Button color='blue.300' _hover={{color: 'blue.600'}}>⬅go home</Button>
+            </Link>
+          </Stack>
+      </Stack>
+    )
   }
 
   if(cart.length === 0) {
