@@ -4,21 +4,21 @@ import { Link, Navigate } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
 import { collection, addDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/config';
+import { CheckoutForm } from './CheckoutForm';
 
 const Checkout = () => {
 
   const {cart, totalPrice, restoreCart} = useCartContext()
 
   const [orderId, setOrderId] = useState(null)
-  const [values, setValues] = useState({
-    name:'',
-    email:'',
-    address:'',
+  // const [values, setValues] = useState({
+  //   name:'',
+  //   email:'',
+  //   address:'',
+  //   cardNumber:''
+  // })
 
-  })
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleOrder = async (values) => {
     const order = {
       buyer: values,
       items: cart.map(({id,name,quantity,price})=>({id, name, quantity, price})),
@@ -60,19 +60,12 @@ const Checkout = () => {
 
   }
 
-  const handleInput = (e) => {
-    setValues({
-      ...values,
-      [e.target.name]:e.target.value
-    })
-  }
-
   if(orderId) {
     return(
       <Stack h='70vh' alignItems='center' justifyContent='center'>
           <Stack borderRadius={20} p={10} boxShadow='0px 0px 22px -3px rgba(0,0,0,0.3)'>
             <Heading>Thanks for trust us!</Heading>
-            <Text>this is yout order ID : <strong>{orderId}</strong></Text>
+            <Text>this is your order ID : <strong>{orderId}</strong></Text>
             <Link to={'/'}>
               <Button color='blue.300' _hover={{color: 'blue.600'}}>⬅go home</Button>
             </Link>
@@ -81,43 +74,16 @@ const Checkout = () => {
     )
   }
 
-  if(cart.length === 0) {
-    return <Navigate to='/' />
-  }
+  // if(cart.length === 0) {
+  //   return <Navigate to='/' />
+  // }
 
   return (
     <Stack h='100vh' alignItems='center' justifyContent='center'>
-      <Stack w='container.lg' h='xl' borderRadius={20} bgColor='blue.300' p={10} >
+      <Stack w={{base:'md', sm:'xl'}} h='xl' borderRadius={10} bgColor='gray.800' p={10} >
 
-      <Heading as='h2' textAlign='center' >Checkout Data</Heading>
-      <chakra.form onSubmit={handleSubmit} display='flex' flexDirection='column' gap={5} >
-        <Input 
-          autoComplete='off'
-          onChange={handleInput}
-          value={values.name}
-          name='name'
-          placeholder='fullName'
-          type={'text'}
-        />
-        <Input 
-          autoComplete='off'
-          onChange={handleInput}
-          value={values.email}
-          name='email'
-          placeholder='example@example.com'
-          type='email'
-        />
-        <Input 
-          autoComplete='off'
-          onChange={handleInput}
-          value={values.address}
-          name='address'
-          type='text'
-          placeholder='example 123'
-        />
-        <Button type='submit'>Send</Button>
-      </chakra.form>
-
+      <Heading as='h2' color='gray.100' textAlign='center' >Checkout Data</Heading>
+      <CheckoutForm handleOrder={handleOrder} />
       </Stack>
     </Stack>
   )
