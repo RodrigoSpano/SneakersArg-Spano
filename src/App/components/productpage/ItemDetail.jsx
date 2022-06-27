@@ -22,7 +22,6 @@ const ItemDetail = ({ item }) => {
       quantity,
     }
     addItem(itemToCart)
-    console.log(itemToCart)
   }
 
   return(
