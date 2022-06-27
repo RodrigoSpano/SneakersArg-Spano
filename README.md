@@ -4,9 +4,11 @@
 
 ### Herramientas utilizadas 🛠
 - Vite Js
-- Chakra UI
-- React-Icons
+- Chakra UI - para darle estilos a los componentes 
+- React-Icons - para los iconos de la pagina
 - React-Router-Dom
+- Formik & Yup - para la creacion y validacion de formularios
+- Firebase - para almacenar los productos, ordenes, consultas y más en la base de datos
 
 #### Instalación:
 **Vite Js:**
@@ -28,6 +30,13 @@
 **React-Router-Dom:**
 
 `$ npm i react-router-dom`
+
+**Formik & Yup:**
+`$ npm i formik --save`
+`$ npm i yup --save`
+
+**Firebase:**
+`$ npm i firebase`
 
 #### Tipografias usadas:
 - Raleway
