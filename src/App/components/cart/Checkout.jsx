@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, Heading, Stack, Text } from '@chakra-ui/react';
+import { Button, Heading, Stack, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
@@ -16,7 +16,7 @@ const Checkout = () => {
   const handleOrder = async (values) => {
     const order = {
       buyer: values,
-      items: cart.map(({id,name,quantity,price})=>({id, name, quantity, price})),
+      items: cart.map(({id,name,quantity, size, price})=>({id, name, quantity, size, price})),
       total: totalPrice()
     }
     
@@ -49,26 +49,6 @@ const Checkout = () => {
         setOrderId( doc.id )
         restoreCart()
       } )
-    }else {
-      
-        <Alert
-          status='error'
-          variant='subtle'
-          flexDirection='column'
-          alignItems='center'
-          justifyContent='center'
-          textAlign='center'
-          height='200px'
-        >
-          <AlertIcon boxSize='40px' mr={0} />
-          <AlertTitle mt={4} mb={1} fontSize='lg'>
-            Application submitted!
-          </AlertTitle>
-          <AlertDescription maxWidth='sm'>
-            Thanks for submitting your application. Our team will get back to you soon.
-          </AlertDescription>
-        </Alert>
-      
     }
   }
 
