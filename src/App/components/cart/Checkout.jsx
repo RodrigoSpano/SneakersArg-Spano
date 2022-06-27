@@ -80,7 +80,7 @@ const Checkout = () => {
 
   return (
     <Stack h='100vh' alignItems='center' justifyContent='center'>
-      <Stack w={{base:'md', sm:'xl'}} h='xl' borderRadius={10} bgColor='gray.800' p={10} >
+      <Stack w={{base:'xs', sm:'md', md:'xl'}} minH='xl' borderRadius={10} bgColor='gray.800' p={10} >
 
       <Heading as='h2' color='gray.100' textAlign='center' >Checkout Data</Heading>
       <CheckoutForm handleOrder={handleOrder} />

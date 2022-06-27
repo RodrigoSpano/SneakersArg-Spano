@@ -1,6 +1,16 @@
 import { Formik } from 'formik'
 import { Button, chakra, Flex, Input, Text } from '@chakra-ui/react'
 import React from 'react'
+import * as Yup from 'yup'
+
+
+  const checkoutSchema = Yup.object().shape({
+    address: Yup.string()
+                .min(6)
+                .max(30)
+                .required('this field is required')
+  });
+
 
 export const CheckoutForm = (props) => {
   return (
@@ -11,6 +21,7 @@ export const CheckoutForm = (props) => {
         address:'',
         cardNumber:'',
       }}
+      validationSchema={checkoutSchema}
       validate={(values) => {
         let errors = {}
 
@@ -25,10 +36,10 @@ export const CheckoutForm = (props) => {
         } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(values.email)){
           errors.email = 'Email can only contain letters, numbers, periods, hyphens, and underscores.'
         }
-        if(!values.address){
-          errors.address = 'invalid address'
-        } else if(/^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/.test(values.address)){
-          errors.address = 'invalid card number'
+        if(!values.cardNumber){
+          errors.cardNumber = 'invalid number'
+        } else if(!/^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/.test(values.cardNumber)){
+          errors.cardNumber = 'invalid card number'
         }
         return errors;
       }}
@@ -62,6 +73,7 @@ export const CheckoutForm = (props) => {
         <Flex direction='column'>
           <label>Card Number</label>
           <Input value={formik.values.cardNumber} onChange={formik.handleChange} onBlur={formik.handleBlur} name='cardNumber' type='text' placeholder='1111 1111 1111 2222'/>
+          {formik.touched && formik.errors.cardNumber && <Text color='red'>{formik.errors.cardNumber}</Text>}
         </Flex>
 
           <Button type='submit' color='gray.800'>send</Button>
