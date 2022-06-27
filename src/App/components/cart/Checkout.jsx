@@ -1,4 +1,4 @@
-import { Button, Heading, Input, Stack, chakra, Text } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, Heading, Stack, Text } from '@chakra-ui/react';
 import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
@@ -41,6 +41,7 @@ const Checkout = () => {
       }
     } )
 
+
     if(outOfStock.length === 0){
       addDoc(orderRef, order)
       .then( (doc) => {
@@ -49,10 +50,26 @@ const Checkout = () => {
         restoreCart()
       } )
     }else {
-      console.log(outOfStock)
-      alert('insufficient stock')
+      
+        <Alert
+          status='error'
+          variant='subtle'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='center'
+          textAlign='center'
+          height='200px'
+        >
+          <AlertIcon boxSize='40px' mr={0} />
+          <AlertTitle mt={4} mb={1} fontSize='lg'>
+            Application submitted!
+          </AlertTitle>
+          <AlertDescription maxWidth='sm'>
+            Thanks for submitting your application. Our team will get back to you soon.
+          </AlertDescription>
+        </Alert>
+      
     }
-
   }
 
   if(orderId) {

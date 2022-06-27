@@ -7,7 +7,7 @@ import { useCartContext } from "../../context/CartContext";
 const ItemDetail = ({ item }) => {
   
   const [quantity, setQuantity] = useState(1)
-
+  const [pickedSize, setPickedSize] = useState(null)
   const {addItem, isInCart} = useCartContext()
 
   const navigate = useNavigate()
@@ -18,9 +18,11 @@ const ItemDetail = ({ item }) => {
   const handleAdd = () => {
     const itemToCart = {
       ...item,
-      quantity
+      'size':pickedSize,
+      quantity,
     }
     addItem(itemToCart)
+    console.log(itemToCart)
   }
 
   return(
@@ -58,6 +60,8 @@ const ItemDetail = ({ item }) => {
               max={item.stock}
               handleAdd={handleAdd}
               size={item.size}
+              setPickedSize={setPickedSize}
+              pickedSize={pickedSize}
               stock={item.stock}
               />
         }
