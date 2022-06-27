@@ -17,11 +17,11 @@ const ItemCounter = ({counter, setCounter, max, handleAdd, size, stock,  setPick
       <Text fontFamily='open sans' > {stock > 0 ? `Available Stock: ${stock} unit..` : 'INSUFICIENT STOCK'}</Text>
 
       <Flex direction='column' fontFamily='open sans'>
-        <Text>Availables sizes:</Text>
+        <Text fontWeight='bold'>Availables sizes:</Text>
         <Box display='flex' gap={2} userSelect='none'>
           {
             size.map( (el) => (
-              <Button key={el} onClick={() => setPickedSize(el)} bgColor={pickedSize === el ? 'yellow.400' : 'gray.100'} p={2} fontSize='12px' >{el}</Button>
+              <Button key={el} onClick={() => setPickedSize(el)} bgColor={pickedSize === el ? 'yellow.400' : 'blue.100'} p={2} fontSize='12px' >{el}</Button>
             ) )
           }
         </Box>
