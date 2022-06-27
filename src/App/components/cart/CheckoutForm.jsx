@@ -44,9 +44,8 @@ export const CheckoutForm = (props) => {
         return errors;
       }}
       onSubmit={(values, {resetForm}) => {
-        resetForm()
         props.handleOrder(values)
-        console.log(values)
+        resetForm()
       } }
     >
       {(formik) => (

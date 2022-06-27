@@ -11,12 +11,7 @@ const Checkout = () => {
   const {cart, totalPrice, restoreCart} = useCartContext()
 
   const [orderId, setOrderId] = useState(null)
-  // const [values, setValues] = useState({
-  //   name:'',
-  //   email:'',
-  //   address:'',
-  //   cardNumber:''
-  // })
+
 
   const handleOrder = async (values) => {
     const order = {
@@ -74,9 +69,9 @@ const Checkout = () => {
     )
   }
 
-  // if(cart.length === 0) {
-  //   return <Navigate to='/' />
-  // }
+  if(cart.length === 0) {
+    return <Navigate to='/' />
+  }
 
   return (
     <Stack h='100vh' alignItems='center' justifyContent='center'>
