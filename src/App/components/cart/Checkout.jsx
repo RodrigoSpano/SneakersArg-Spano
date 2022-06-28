@@ -18,7 +18,8 @@ const Checkout = () => {
     const order = {
       buyer: values,
       items: cart.map(({id,name,quantity, size, price})=>({id, name, quantity, size, price})),
-      total: totalPrice()
+      total: totalPrice(),
+      date: new Date()
     }
     
     const batch = writeBatch(db)
@@ -67,9 +68,9 @@ const Checkout = () => {
     )
   }
 
-  if(cart.length === 0) {
-    return <Navigate to='/' />
-  }
+  // if(cart.length === 0) {
+  //   return <Navigate to='/' />
+  // }
 
   return (
     <Stack h='100vh' alignItems='center' justifyContent='center' direction={{base:'column', md:'row'}} userSelect='none'>
@@ -78,7 +79,7 @@ const Checkout = () => {
       <Heading as='h2' color='gray.100' textAlign='center' >Checkout Data</Heading>
       <CheckoutForm handleOrder={handleOrder} />
       </Stack>
-      <CartResume />
+      {cart.length > 0 ? <CartResume /> : null}
     </Stack>
   )
 }

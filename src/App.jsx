@@ -25,7 +25,6 @@ function App() {
               <Route path="/sneakers/:itemId" element={<ProductPage />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/cart/checkout" element={<Checkout />} />
-              <Route path="/account" element={<Account />} />
               <Route path="*" element={<Navigate to='/' />} />
             </Routes>
           <Footer />

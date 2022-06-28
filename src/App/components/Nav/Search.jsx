@@ -1,7 +1,7 @@
 import { Input, chakra, Box, Text } from '@chakra-ui/react'
 import { collection, getDocs} from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { db } from '../../firebase/config'
 
 export const Search = () => {
@@ -26,22 +26,14 @@ export const Search = () => {
     } )
     
   }, [])
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
   
-  const isErr = Input === ''
 
   return (
     <>
-      <chakra.form py={10} onSubmit={handleSubmit} >
+      <chakra.form py={10} onSubmit={(e) => {e.preventDefault()}} >
         <Input
           onChange={(e) => setValue(e.target.value)}
           value={value}
-          isInvalid={isErr}
           autoComplete='off'
           name='search' 
           placeholder='search...' 

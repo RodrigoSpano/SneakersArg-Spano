@@ -18,6 +18,7 @@ export const CheckoutForm = (props) => {
       initialValues={{
         name:'',
         email:'',
+        repeat:'',
         address:'',
         cardNumber:'',
       }}
@@ -36,6 +37,13 @@ export const CheckoutForm = (props) => {
         } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(values.email)){
           errors.email = 'Email can only contain letters, numbers, periods, hyphens, and underscores.'
         }
+
+        if(!values.repeat){
+          errors.repeat = 'do not match'
+        } else if(values.repeat != values.email) {
+          errors.repeat = 'emails do not match'
+        }
+
         if(!values.cardNumber){
           errors.cardNumber = 'invalid number'
         } else if(!/^(?:4\d([\- ])?\d{6}\1\d{5}|(?:4\d{3}|5[1-5]\d{2}|6011)([\- ])?\d{4}\2\d{4}\2\d{4})$/.test(values.cardNumber)){
@@ -64,6 +72,12 @@ export const CheckoutForm = (props) => {
         </Flex>
 
         <Flex direction='column'>
+          <label>Repeat Email</label>
+          <Input value={formik.values.repeat} onChange={formik.handleChange} onBlur={formik.handleBlur} name="repeat" type='password' placeholder='rodolf@claus.nor'/>
+          {formik.touched && formik.errors.repeat && <Text color='red'>{formik.errors.repeat}</Text>}
+        </Flex>
+
+        <Flex direction='column'>
           <label>Address</label>
           <Input value={formik.values.address} onChange={formik.handleChange} onBlur={formik.handleBlur} name='address' type='text' placeholder='Nort Pole 123' />
           {formik.touched && formik.errors.address && <Text color='red'>{formik.errors.address}</Text>}
@@ -71,7 +85,7 @@ export const CheckoutForm = (props) => {
 
         <Flex direction='column'>
           <label>Card Number</label>
-          <Input value={formik.values.cardNumber} onChange={formik.handleChange} onBlur={formik.handleBlur} name='cardNumber' type='text' placeholder='1111 1111 1111 2222'/>
+          <Input value={formik.values.cardNumber} onChange={formik.handleChange} onBlur={formik.handleBlur} name='cardNumber' type='text' placeholder='4540 1111 1111 2222'/>
           {formik.touched && formik.errors.cardNumber && <Text color='red'>{formik.errors.cardNumber}</Text>}
         </Flex>
 

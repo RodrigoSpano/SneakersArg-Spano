@@ -3,10 +3,10 @@
 - SneakersArg es un sitio web destinado a la venta de zapatillas, mejor conocidas como sneakers, como proyecto final del curso de React Js de CoderHouse
 
 ### Herramientas utilizadas 🛠
-- Vite Js
+- Vite Js - Rapido HMR- Build Optimizado- Universal Plugins- Full typed APIs
 - Chakra UI - para darle estilos a los componentes 
 - React-Icons - para los iconos de la pagina
-- React-Router-Dom
+- React-Router-Dom - enrutamiento dinámico en la aplicación web
 - Formik & Yup - para la creacion y validacion de formularios
 - Firebase - para almacenar los productos, ordenes, consultas y más en la base de datos
 

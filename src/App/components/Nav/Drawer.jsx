@@ -34,7 +34,6 @@ export const DrawerNav = () => {
           <Stack alignItems='center' gap={10} >
             <NavLink to={'/'}><Text variant={'nav'}>Home</Text></NavLink>
             <NavLink to={'/sneakers'} ><Text variant={'nav'}>Sneakers</Text></NavLink>
-            <NavLink to={'/account'} ><Text variant={'nav'}>Account</Text></NavLink>
             <NavLink to={'/cart'} ><Text variant={'nav'} display='flex' flexDirection='row' alignItems='center' gap={1} >Shopping Bag <BiShoppingBag /> </Text></NavLink>
           </Stack>
 
