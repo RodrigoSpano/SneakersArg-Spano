@@ -1,4 +1,4 @@
-import { Button, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, Heading, Text, Box } from '@chakra-ui/react'
+import { Stack, Button, useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, Heading, Text, Box } from '@chakra-ui/react'
 import React, { useRef } from 'react'
 import { HiMenuAlt1 } from 'react-icons/hi'
 import { BiShoppingBag } from 'react-icons/bi'

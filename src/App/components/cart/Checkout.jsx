@@ -5,6 +5,7 @@ import { useCartContext } from '../../context/CartContext';
 import { collection, addDoc, writeBatch, query, where, documentId, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/config';
 import { CheckoutForm } from './CheckoutForm';
+import { CartResume } from './CartResume';
 
 const Checkout = () => {
 
@@ -71,12 +72,13 @@ const Checkout = () => {
   }
 
   return (
-    <Stack h='100vh' alignItems='center' justifyContent='center'>
+    <Stack h='100vh' alignItems='center' justifyContent='center' direction={{base:'column', md:'row'}} userSelect='none'>
       <Stack w={{base:'xs', sm:'md', md:'xl'}} minH='xl' borderRadius={10} bgColor='gray.800' p={10} >
 
       <Heading as='h2' color='gray.100' textAlign='center' >Checkout Data</Heading>
       <CheckoutForm handleOrder={handleOrder} />
       </Stack>
+      <CartResume />
     </Stack>
   )
 }

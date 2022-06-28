@@ -1,7 +1,7 @@
 import { Input, chakra, Box, Text } from '@chakra-ui/react'
 import { collection, getDocs} from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { db } from '../../firebase/config'
 
 export const Search = () => {
@@ -31,12 +31,8 @@ export const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
   }
-  
-  const navigate = useNavigate()
-  const handleNavigate = ({id}) => {
-    navigate(`/sneakers/:${id}`)
-  }
 
+  
   const isErr = Input === ''
 
   return (
@@ -54,7 +50,7 @@ export const Search = () => {
             value.length > 0
             && <Box borderBottom='1px solid gray' h='auto'>
                 {
-                  prods.filter( (el) =>  el.name.toLowerCase().includes(value)   ).map( (res) => (
+                  prods.filter( (el) =>  el.name.toLowerCase().includes(value) ).map( (res) => (
                     <Link to={`/sneakers/${res.id}`} key={res.id} >
                       <Text _hover={{bgColor: 'gray.100', cursor: 'pointer'}}>
                         {res.name}

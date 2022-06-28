@@ -12,7 +12,7 @@ const theme = extendTheme({
         'na':{
           bgColor: 'none',
           fontSize: '3xl',
-          color: 'orange.400',
+          color: 'gray.100',
           transition: 'all ease 0.5s',
           _hover: {
             transform: 'rotate(-90deg)',
