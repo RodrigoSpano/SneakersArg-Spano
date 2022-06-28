@@ -32,10 +32,12 @@
 `$ npm i react-router-dom`
 
 **Formik & Yup:**
+
 `$ npm i formik --save`
 `$ npm i yup --save`
 
 **Firebase:**
+
 `$ npm i firebase`
 
 #### Tipografias usadas:
