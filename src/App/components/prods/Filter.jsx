@@ -1,13 +1,9 @@
-import { Heading, Stack, Input, Flex, Box } from '@chakra-ui/react'
+import { Heading, Stack, Flex, Box } from '@chakra-ui/react'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 
 export default function Filter() {
-
-
-  const isError = Input === ''
-
 
   return (
     <Stack userSelect='none' direction='column' maxW='250px' alignItems='center' justifyContent='space-around'  h='min-content' w='xs' mt={5} ml={5} p={5}>

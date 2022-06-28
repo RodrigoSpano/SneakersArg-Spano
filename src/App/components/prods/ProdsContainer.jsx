@@ -1,6 +1,5 @@
 import { Spinner, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-// import { requestAll } from '../../mock/request'
 import ItemCard from '../ItemCard'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../../firebase/config'

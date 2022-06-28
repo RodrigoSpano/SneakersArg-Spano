@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Heading, Image, Stack } from '@chakra-ui/react'
+import { Box, Image, Stack } from '@chakra-ui/react'
 import { DrawerNav } from './Nav/Drawer';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import title from '../assets/title.png'
 import unnamed from '../assets/unnamed.png'
 
