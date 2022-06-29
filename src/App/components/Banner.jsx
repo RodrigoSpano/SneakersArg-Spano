@@ -12,7 +12,7 @@ export function Banner() {
   return (
     <Box bgImage={hero} h='40vh' bgSize='cover' display='flex' flexDirection='column' justifyContent='center' alignItems='center' userSelect='none'>
     <Heading as='h1' variant='comic' mb={5} fontSize={{base:'xl',sm: '2xl',md:'4xl'}} textAlign='center' fontWeight='bold' letterSpacing={5} >your dream´s sneakers</Heading>
-      <Button onClick={handleProducts} variant='nik'>See All</Button>
+      <Button onClick={handleProducts} color={{base:'black', md:'white'}} bgColor={{base:'blue.200',md:'transparent'}} variant='nik'>See All</Button>
     </Box>
   )
 }

@@ -68,9 +68,9 @@ const Checkout = () => {
     )
   }
 
-  // if(cart.length === 0) {
-  //   return <Navigate to='/' />
-  // }
+  if(cart.length === 0) {
+    return <Navigate to='/' />
+  }
 
   return (
     <Stack h='100vh' alignItems='center' justifyContent='center' direction={{base:'column', md:'row'}} userSelect='none'>
