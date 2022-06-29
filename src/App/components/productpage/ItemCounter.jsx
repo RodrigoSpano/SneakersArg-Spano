@@ -31,7 +31,7 @@ const ItemCounter = ({counter, setCounter, max, handleAdd, size, stock,  setPick
         <Button onClick={handleDecrease} variant='inc' >-</Button>
         <chakra.span fontSize='30px' fontFamily='Open Sans' >{counter}</chakra.span>
         <Button onClick={handleIncrease} variant='inc' >+</Button>
-        <Button onClick={handleAdd} disabled={stock <= 0} variant='cart'>Add to cart</Button>
+        <Button onClick={handleAdd} disabled={stock <= 0 || pickedSize === null} variant='cart'>Add to cart</Button>
       </Box>
 
     </Flex>
