@@ -10,7 +10,14 @@
 - Formik & Yup - para la creacion y validacion de formularios
 - Firebase - para almacenar los productos, ordenes, consultas y más en la base de datos
 
+###Levantar la APP
+Escribir `npm install` para instalar todas las dependencias de la App.
+Escribir `npm run dev` para levantar la App en el http://localhost:3000/
+Utilizamos `npm run dev` ya que estamos usando Vite Js
+
 #### Instalación:
+si en vez de usar `npm i` para instalar todas las dependencias, queres instalarlas una por una, aca te dejo los comandos
+
 **Vite Js:**
 
 `$ npm create vite@latest `
