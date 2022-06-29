@@ -1,6 +1,8 @@
 # Sneakers Arg
 
-- SneakersArg es un sitio web destinado a la venta de zapatillas, mejor conocidas como sneakers, como proyecto final del curso de React Js de CoderHouse
+SneakersArg es una aplicación web, ecommerce para el rubo de zapatillas realizado con React Js. Fue creado con Vite Js. En esta aplicación puedes simular tanto la busqueda de zapatillas, ver sus productos, enviar formularios para contactarte, hasta simular compras!
+
+Su funcionamiento se pueve ver **[acá](https://sneakers-arg.netlify.app/)**, deployado con Netlify.
 
 ### Herramientas utilizadas 🛠
 - Vite Js - Rapido HMR- Build Optimizado- Universal Plugins- Full typed APIs
