@@ -54,6 +54,6 @@ si en vez de usar `npm i` para instalar todas las dependencias, queres instalarl
 - Open Sans
 
 ### Link a video de prueba de links/rutas del sitio
-**[LINK](https://www.loom.com/share/e76b6bfab1374bcc8435aacea1916335)**
+**[LINK](https://www.loom.com/share/c59d847decef483db1bf55913f48a798)**
 
 
